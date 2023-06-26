@@ -1,4 +1,7 @@
-.movies__item {
-  font-size: 16px;
-  color: red;
+@use '../abstracts' as *;
+
+.movies__list {
+  .movies__item {
+  color: $clr-white;
+  }
 }

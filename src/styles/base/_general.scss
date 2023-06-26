@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: $base-fs;
+  font-family: $ff-base;
+  background: $clr-primary-400;
+  color: $clr-neutral-100;
+}
+
+a {
+  text-decoration: none;
+}
+

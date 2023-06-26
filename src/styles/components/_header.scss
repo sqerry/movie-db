@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+
+
+.header {
+  background-color: $clr-primary-500;
+  min-height: 12rem;
+  max-width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    margin-right: 4rem;
+
+    h1 {
+      color: $clr-neutral-100;
+      font-weight: $fw-bold;
+      font-size: 5rem;
+      text-transform: uppercase;
+
+      span {
+        color: $clr-secondary-400;
+        font-size: 6rem;
+      }
+    }
+  }
+
+  .register-login.btn {
+    margin-left: auto;
+  }
+}
