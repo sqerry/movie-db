@@ -28,7 +28,7 @@ const MovieItem = ({ title, posterImage, heroImage, description, episodeNumber }
   return (
     <li className="movies__item" key={title} onClick={handleModalOpen}>
       <div className="movies__item--img">
-        <img src={`src/assets/img/${posterImage}`} alt="movie poster" />
+        <img src={`/img/${posterImage}`} alt="movie poster" />
       </div>
       <h3 className="movies__item--title">{title}</h3>
       {isModalOpen && (
@@ -48,7 +48,7 @@ const MovieItem = ({ title, posterImage, heroImage, description, episodeNumber }
 
 const MovieItemModal = React.forwardRef(({ hero, poster, title, description, episode, modalClose }, ref) => {
   const backgroundImageStyle = {
-    backgroundImage: `url(src/assets/img/${hero})`,
+    backgroundImage: `url(/img/${hero})`,
   }
 
   return (
@@ -56,7 +56,7 @@ const MovieItemModal = React.forwardRef(({ hero, poster, title, description, epi
       <div className="movie_card" ref={ref}>
         <div className="info_section">
           <div className="movie_header">
-            <img className="locandina" src={`src/assets/img/${poster}`} alt="movie poster" />
+            <img className="locandina" src={`/img/${poster}`} alt="movie poster" />
             <h1>{title}</h1>
             <div className="minutes">Episode: {episode}</div>
           </div>
