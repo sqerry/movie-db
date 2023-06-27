@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.btn,
+button,
+select {
+  color: $clr-neutral-1000;
+  background-color: $clr-secondary-400;
+  padding: 1.5rem 4rem;
+  border-radius: 2.5rem;
+  transition: 0.3s;
+
+  &:hover {
+  }
+}

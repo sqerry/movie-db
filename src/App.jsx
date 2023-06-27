@@ -42,9 +42,7 @@ export default function App() {
         toggleUserLogged={toggleUserLogged}
         handleSearchQueryChange={performSearch}
       />
-      <main>
-        <MovieList movies={movies} searchQuery={searchQuery} />
-      </main>
+      <MovieList movies={movies} searchQuery={searchQuery} />
     </>
   )
 }

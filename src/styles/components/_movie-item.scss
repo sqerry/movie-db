@@ -1,7 +1,45 @@
 @use '../abstracts' as *;
 
 .movies__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 4rem;
+  column-gap: 1.5rem;
+  row-gap: 3rem;
+
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 524px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 390px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .movies__item {
-  color: $clr-white;
+    color: $clr-white;
+    cursor: pointer;
+
+    &--img {
+      overflow: hidden;
+
+      img {
+        height: auto;
+        transition: 0.3s;
+      }
+    }
+
+    &:hover {
+      .movies__item--img img {
+        transform: scale(1.2);
+      }
+    }
+
+    &--title {
+      margin-top: 1rem;
+      max-width: 23rem;
+      font-weight: $fw-medium;
+    }
   }
 }

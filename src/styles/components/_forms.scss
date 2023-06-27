@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.actions {
+  margin-top: 4rem;
+
+  select {
+    background-color: $clr-neutral-500;
+    border: none;
+    color: $clr-neutral-400;
+    cursor: pointer;
+    position: relative;
+  }
+}

@@ -1,11 +1,9 @@
 @use '../abstracts' as *;
 
-
 :root {
   --color-background: #222;
-  --color-foreground: #20E08A;
+  --color-foreground: #20e08a;
 }
-
 
 .search {
   --easing: cubic-bezier(0.4, 0, 0.2, 1);
@@ -30,7 +28,7 @@
   border: 2px solid transparent;
   display: flex;
   transition: border-color var(--transition-time-icon) linear,
-  padding var(--transition-time-input) var(--easing);
+    padding var(--transition-time-input) var(--easing);
 
   &__input {
     background: transparent;
@@ -41,8 +39,7 @@
     outline: none;
     padding: 0;
     transition: width var(--transition-time-input) var(--easing),
-    padding var(--transition-time-input) var(--easing),
-    opacity var(--transition-time-input) linear;
+      padding var(--transition-time-input) var(--easing), opacity var(--transition-time-input) linear;
     width: 0;
 
     &::placeholder {
@@ -104,6 +101,10 @@
         opacity: 1;
         padding: 0 1rem 0 2rem;
         width: calc(var(--font-size) * 12);
+
+        @media (max-width: 767px) {
+          width: 100%;
+        }
       }
 
       &__label {

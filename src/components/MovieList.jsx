@@ -13,7 +13,7 @@ const MovieList = ({ movies, searchQuery }) => {
     } else if (sortOption === 'desc') {
       sortedMovies.sort((a, b) => b.episode_number - a.episode_number)
     } else if (sortOption === 'recommended') {
-      const favoritesOrder = [3, 5, 6, 2, 1] // Update the episode numbers in your preferred order
+      const favoritesOrder = [3, 5, 6, 4, 2, 1]
 
       sortedMovies.sort((a, b) => {
         const aIndex = favoritesOrder.indexOf(parseInt(a.episode_number))
@@ -36,23 +36,8 @@ const MovieList = ({ movies, searchQuery }) => {
   )
 
   return (
-    <>
-      <ul className="movies__list container">
-        {searchQuery && filteredMovies.length === 0 ? (
-          <p>No movies found.</p>
-        ) : (
-          filteredMovies.map(({ title, description, episode_number, poster }) => (
-            <MovieItem
-              key={title}
-              title={title}
-              description={description}
-              episodeNumber={episode_number}
-              posterImage={poster}
-            />
-          ))
-        )}
-      </ul>
-      <div className="actions">
+    <main>
+      <div className="actions container">
         <select value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
           <option value="">Sort by</option>
           <option value="recommended">Recommended</option>
@@ -60,7 +45,23 @@ const MovieList = ({ movies, searchQuery }) => {
           <option value="desc">Episode Number (Descending)</option>
         </select>
       </div>
-    </>
+      <ul className="movies__list container">
+        {searchQuery && filteredMovies.length === 0 ? (
+          <p>No movies found.</p>
+        ) : (
+          filteredMovies.map(({ title, description, episode_number, poster, hero_image }) => (
+            <MovieItem
+              key={title}
+              title={title}
+              description={description}
+              episodeNumber={episode_number}
+              posterImage={poster}
+              heroImage={hero_image}
+            />
+          ))
+        )}
+      </ul>
+    </main>
   )
 }
 
