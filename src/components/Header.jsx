@@ -1,6 +1,11 @@
-import Search from './Search.jsx'
+import React from 'react'
+import Search from './Search'
 
 const Header = ({ isUserLogged, toggleUserLogged, handleSearchQueryChange }) => {
+  const handleButtonClick = () => {
+    toggleUserLogged()
+  }
+
   return (
     <header className="header">
       <a href="/" className="logo">
@@ -11,7 +16,7 @@ const Header = ({ isUserLogged, toggleUserLogged, handleSearchQueryChange }) => 
       <div className="search-bar">
         <Search performSearch={handleSearchQueryChange} />
       </div>
-      <button onClick={toggleUserLogged} className="register-login btn">
+      <button onClick={handleButtonClick} className="register-login btn">
         {isUserLogged ? 'Logout' : 'Login'}
       </button>
     </header>

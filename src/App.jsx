@@ -1,17 +1,16 @@
-import Header from './components/Header.jsx'
-import MovieList from './components/MovieList.jsx'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import Header from './components/Header'
+import MovieList from './components/MovieList'
 import './styles/main.scss'
 
-export default function App() {
+const App = () => {
   const [isUserLogged, setIsUserLogged] = useState(false)
   const [movies, setMovies] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
 
   const toggleUserLogged = () => {
-    // artificial delay
     setTimeout(() => {
-      setIsUserLogged(!isUserLogged)
+      setIsUserLogged((prevState) => !prevState)
     }, 500)
   }
 
@@ -46,3 +45,5 @@ export default function App() {
     </>
   )
 }
+
+export default App

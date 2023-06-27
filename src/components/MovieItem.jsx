@@ -10,10 +10,10 @@ const MovieItem = ({ title, posterImage, heroImage, description, episodeNumber }
   }
 
   const handleModalClose = (event) => {
-    if (
-      (modalRef.current && !modalRef.current.contains(event.target)) ||
-      event.target.classList.contains('close')
-    ) {
+    const isModalClicked = modalRef.current && modalRef.current.contains(event.target)
+    const isCloseButtonClicked = event.target.classList.contains('close')
+
+    if (!isModalClicked || isCloseButtonClicked) {
       setIsModalOpen(false)
     }
   }
@@ -32,17 +32,15 @@ const MovieItem = ({ title, posterImage, heroImage, description, episodeNumber }
       </div>
       <h3 className="movies__item--title">{title}</h3>
       {isModalOpen && (
-        <div className="modal-backdrop">
-          <MovieItemModal
-            ref={modalRef}
-            title={title}
-            poster={posterImage}
-            hero={heroImage}
-            description={description}
-            episode={episodeNumber}
-            modalClose={handleModalClose}
-          />
-        </div>
+        <MovieItemModal
+          ref={modalRef}
+          title={title}
+          poster={posterImage}
+          hero={heroImage}
+          description={description}
+          episode={episodeNumber}
+          modalClose={handleModalClose}
+        />
       )}
     </li>
   )

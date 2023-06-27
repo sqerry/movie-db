@@ -6,27 +6,31 @@ const MovieList = ({ movies, searchQuery }) => {
   const [sortedMovies, setSortedMovies] = useState([])
 
   useEffect(() => {
-    let sortedMovies = [...movies]
+    const sortMovies = () => {
+      let sortedMovies = [...movies]
 
-    if (sortOption === 'asc') {
-      sortedMovies.sort((a, b) => a.episode_number - b.episode_number)
-    } else if (sortOption === 'desc') {
-      sortedMovies.sort((a, b) => b.episode_number - a.episode_number)
-    } else if (sortOption === 'recommended') {
-      const favoritesOrder = [3, 5, 6, 4, 2, 1]
+      if (sortOption === 'asc') {
+        sortedMovies.sort((a, b) => a.episode_number - b.episode_number)
+      } else if (sortOption === 'desc') {
+        sortedMovies.sort((a, b) => b.episode_number - a.episode_number)
+      } else if (sortOption === 'recommended') {
+        const favoritesOrder = [3, 5, 6, 4, 2, 1]
 
-      sortedMovies.sort((a, b) => {
-        const aIndex = favoritesOrder.indexOf(parseInt(a.episode_number))
-        const bIndex = favoritesOrder.indexOf(parseInt(b.episode_number))
+        sortedMovies.sort((a, b) => {
+          const aIndex = favoritesOrder.indexOf(parseInt(a.episode_number))
+          const bIndex = favoritesOrder.indexOf(parseInt(b.episode_number))
 
-        if (aIndex === -1) return 1
-        if (bIndex === -1) return -1
+          if (aIndex === -1) return 1
+          if (bIndex === -1) return -1
 
-        return aIndex - bIndex
-      })
+          return aIndex - bIndex
+        })
+      }
+
+      setSortedMovies(sortedMovies)
     }
 
-    setSortedMovies(sortedMovies)
+    sortMovies()
   }, [movies, sortOption])
 
   const filteredMovies = sortedMovies.filter(

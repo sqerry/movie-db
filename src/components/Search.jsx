@@ -1,15 +1,16 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 const Search = ({ performSearch }) => {
   const [searchQuery, setSearchQuery] = useState('')
 
   const handleSearchQueryChange = (event) => {
-    setSearchQuery(event.target.value)
-    performSearch(event.target.value)
+    const query = event.target.value
+    setSearchQuery(query)
+    performSearch(query)
   }
 
   return (
-    <form action="" className="search">
+    <form className="search">
       <input
         className="search__input"
         type="search"
