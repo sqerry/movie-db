@@ -22,6 +22,7 @@ The React Movie App is a web application that allows users to browse and search 
 - Vite
 - JavaScript
 - SCSS
+- Prettier
 
 ## Prerequisites
 
