@@ -23,6 +23,11 @@
       position: relative;
       padding: 25px;
       height: 40%;
+
+      @media (max-width: 767px) {
+        padding: 10px;
+      }
+
       h1 {
         color: #fff;
         font-weight: 600;
@@ -57,8 +62,17 @@
       padding: 25px;
       height: 50%;
       margin-top: 80px;
+
+      @media (max-width: 767px) {
+        padding: 0;
+        margin: 0;
+      }
       .text {
         color: #cfd6e1;
+
+        @media (max-width: 767px) {
+          padding: 30px 10px;
+        }
       }
     }
   }
