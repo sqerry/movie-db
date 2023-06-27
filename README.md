@@ -2,8 +2,8 @@
 
 The React Movie App is a web application that allows users to browse and search for movies. It displays a list of movies along with their details, such as title, poster image, and description. Users can also log in and log out of the app.
 
-![React Movie App](./public/screenshot1.jpg")
-![React Movie App](./public/screenshot2.jpg")
+![React Movie App](./public/screenshot1.jpg)
+![React Movie App](./public/screenshot2.jpg)
 
 
 ## Features
