@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 
 const Search = ({ performSearch }) => {
-  const [searchQuery, setSearchQuery] = useState('')
-
   const handleSearchQueryChange = (event) => {
     const query = event.target.value
-    setSearchQuery(query)
     performSearch(query)
   }
 
@@ -16,7 +13,6 @@ const Search = ({ performSearch }) => {
         type="search"
         placeholder="Search"
         id="searchInput"
-        value={searchQuery}
         onChange={handleSearchQueryChange}
       />
 

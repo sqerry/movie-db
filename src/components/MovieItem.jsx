@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 
 const MovieItem = ({ title, posterImage, heroImage, description, episodeNumber }) => {
@@ -17,13 +17,6 @@ const MovieItem = ({ title, posterImage, heroImage, description, episodeNumber }
       setIsModalOpen(false)
     }
   }
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleModalClose)
-    return () => {
-      document.removeEventListener('mousedown', handleModalClose)
-    }
-  }, [])
 
   return (
     <li className="movies__item" key={title} onClick={handleModalOpen}>
@@ -65,11 +58,11 @@ const MovieItemModal = React.forwardRef(({ hero, poster, title, description, epi
           </div>
         </div>
         <div className="blur_back" style={backgroundImageStyle}></div>
-        <div className="close" onClick={modalClose}>
+        <div className="close" onMouseDown={modalClose}>
           X
         </div>
       </div>
-      <div className="overlay"></div>
+      <div className="overlay" onMouseDown={modalClose}></div>
     </>
   )
 })
